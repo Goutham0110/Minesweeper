@@ -1,0 +1,23 @@
+:root {
+    background-color: #C3CEDA;
+    background-color: #738FA7;
+    background-color: #0C4160;
+    background-color: #071330;
+}
+
+.block {
+    background-color: #0C4160;
+    border-radius: 15%;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    margin: 3px;
+    justify-content: center;
+    align-items: center;
+    color: #0C4160;
+    font-weight: bold;
+    font-size: 21px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: #07133040 0px 13px 16px -12px inset,
+                #0713304d 25px -20px 13px -18px inset;
+}
