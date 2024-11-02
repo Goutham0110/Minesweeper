@@ -1,21 +1,26 @@
-import { useState } from "react";
-import "../styles/global.css";
+import { useContext, useState } from "react";
+import { GameContext } from "../App";
 
 export default function Block({ data }) {
     const [blockData, setBlockData] = useState(data);
+    const [gameState, setGameState] = useContext(GameContext);
+    const isBombBlock = blockData.value === "bomb";
 
     function openBlock() {
-        setBlockData((prev) => {
-            return ({
-                ...prev,
-                isOpened: true
-            })
-        })
+        setBlockData((prev) => ({
+            ...prev,
+            isOpened: true
+        }));
+        setGameState((prev) => ({
+            ...prev,
+            isBoom: prev.isBoom || isBombBlock,
+            unexploredNonBombBlocksCount: prev.unexploredNonBombBlocksCount - 1
+        }));
     }
 
     return (
         <div className="block" onClick={openBlock} style={{ backgroundColor: blockData.isOpened ? "#738FA7" : "#0C4160" }}>
-            {!blockData?.isOpened ? '' : (blockData.value === "bomb" ? '💣' : blockData.value)}
+            {!blockData?.isOpened ? '' : (isBombBlock ? '💣' : blockData.value)}
         </div >
     )
 }

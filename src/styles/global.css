@@ -3,21 +3,45 @@
     background-color: #738FA7;
     background-color: #0C4160;
     background-color: #071330;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.app {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gameInfoPanel {
+    height: 25vh;
+    color: #C3CEDA;
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .block {
     background-color: #0C4160;
     border-radius: 15%;
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     display: flex;
     margin: 3px;
     justify-content: center;
     align-items: center;
     color: #0C4160;
     font-weight: bold;
-    font-size: 21px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 24px;
     box-shadow: #07133040 0px 13px 16px -12px inset,
-                #0713304d 25px -20px 13px -18px inset;
+        #0713304d 25px -20px 13px -18px inset;
 }

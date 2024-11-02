@@ -1,11 +1,16 @@
+import { useContext, useEffect, useMemo } from "react";
+import { GameContext } from "../App";
+
 export default function useGrid(length, dimension, bombs = 10) {
+
+    const [gameState, setGameState] = useContext(GameContext);
 
     /** init grid array */
     const [grid, gridLength] = initGrid(length, dimension);
 
     /** get bomb coordinates */
     const bombIndexes = getBombs(grid, bombs);
-
+    const bombIndexMemo = useMemo(() => bombIndexes, []);
 
     /** insert clue numbers */
     const surroundingIndexes = getSurroundingIndexes(bombIndexes, length, gridLength);
@@ -14,6 +19,14 @@ export default function useGrid(length, dimension, bombs = 10) {
         if (index === false || index < 0 || index >= gridLength || grid[index]['value'] === "bomb") continue;
         grid[index]['value'] = grid[index]['value'] + 1;
     }
+
+    useEffect(() => {
+        setGameState((prev) => ({
+            ...prev,
+            bombIndexes: bombIndexMemo,
+            unexploredNonBombBlocksCount: gridLength - bombIndexes.length
+        }))
+    }, []);
 
     return grid;
 }
