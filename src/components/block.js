@@ -19,7 +19,7 @@ export default function Block({ data }) {
     }
 
     return (
-        <div className="block" onClick={openBlock} style={{ backgroundColor: blockData.isOpened ? "#738FA7" : "#0C4160" }}>
+        <div className="block" onClick={openBlock} style={{ backgroundColor: blockData.isOpened ? "#FF6A3D" : "#724840" }}>
             {!blockData?.isOpened ? '' : (isBombBlock ? '💣' : blockData.value)}
         </div >
     )

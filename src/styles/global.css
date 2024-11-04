@@ -1,8 +1,14 @@
 :root {
-    background-color: #C3CEDA;
-    background-color: #738FA7;
-    background-color: #0C4160;
-    background-color: #071330;
+    --font: #FF6A3D;
+    --accent: #FF6A3D;
+    --secondary: #F1F2F5;
+    --primary: #0A1F44;
+
+    /* --font: #C3CEDA;
+    --accent: #738FA7;
+    --secondary: #0C4160;
+    --primary: #071330; */
+    background-color: var(--primary);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -16,7 +22,7 @@
 
 .gameInfoPanel {
     height: 25vh;
-    color: #C3CEDA;
+    color: var(--font);
     font-size: 32px;
     font-weight: bold;
     display: flex;
@@ -31,7 +37,6 @@
 }
 
 .block {
-    background-color: #0C4160;
     border-radius: 15%;
     height: 60px;
     width: 60px;
@@ -39,7 +44,7 @@
     margin: 3px;
     justify-content: center;
     align-items: center;
-    color: #0C4160;
+    color: var(--secondary);
     font-weight: bold;
     font-size: 24px;
     box-shadow: #07133040 0px 13px 16px -12px inset,
