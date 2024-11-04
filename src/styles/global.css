@@ -3,11 +3,6 @@
     --accent: #FF6A3D;
     --secondary: #F1F2F5;
     --primary: #0A1F44;
-
-    /* --font: #C3CEDA;
-    --accent: #738FA7;
-    --secondary: #0C4160;
-    --primary: #071330; */
     background-color: var(--primary);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
