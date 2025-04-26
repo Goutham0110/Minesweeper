@@ -24,7 +24,7 @@ export default function useGrid(length, dimension, bombs = 10) {
         setGameState((prev) => ({
             ...prev,
             bombIndexes: bombIndexMemo,
-            unexploredNonBombBlocksCount: gridLength - bombIndexes.length
+            unexploredNonBombBlocksCount: gridLength - bombs
         }))
     }, []);
 

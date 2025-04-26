@@ -10,7 +10,7 @@ export default function Grid({ length = 10, dimension = 2 }) {
             height: `${(length * 66)}px`
         }}>
             {grid.map((data, index) => {
-                return <Block data={data} key={index} />
+                return <Block data={data} key={index+1} />
             })}
         </div>
     )

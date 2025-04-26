@@ -14,7 +14,7 @@ export default function Block({ data }) {
         setGameState((prev) => ({
             ...prev,
             isBoom: prev.isBoom || isBombBlock,
-            unexploredNonBombBlocksCount: prev.unexploredNonBombBlocksCount - 1
+            unexploredNonBombBlocksCount: (!blockData?.isOpened && !isBombBlock) ? prev.unexploredNonBombBlocksCount - 1 : prev.unexploredNonBombBlocksCount
         }));
     }
 

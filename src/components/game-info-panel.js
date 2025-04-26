@@ -6,7 +6,7 @@ export default function GameInfoPanel() {
 
     let gameStatus = null;
     if (gameState.isBoom) gameStatus = "💥💥💥 Boom! 💣 Game Over 💥💥💥";
-    if (!gameState.unexploredNonBombBlocksCount) gameStatus = "You have found all the mines💣  Good Game🥳";
+    if (!gameState.isBoom && !gameState.unexploredNonBombBlocksCount) gameStatus = "You have found all the mines💣  Good Game🥳";
 
     if (!gameStatus) gameStatus = `Keep Going! Still ${gameState.unexploredNonBombBlocksCount} blocks to explore 🔍`;
 
